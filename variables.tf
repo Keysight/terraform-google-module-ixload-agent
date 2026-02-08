@@ -53,7 +53,7 @@ MachineType must be one of the following types:
 }
 
 variable "MarketplaceImageName" {
-	default = "ixia-ixload-virtual-test-appliance-11-00-0-634"
+	default = "keysight-ixload-virtual-test-appliance-26-0-0-317"
 	description = "Identifier for image"
 	type = string
 }
