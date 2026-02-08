@@ -44,8 +44,11 @@ variable "MachineType" {
 	description = "Designation for set of resources available to VM"
 	type = string
 	validation {
-		condition = can(regex("c2-standard-16", var.MachineType)) || can(regex("c2-standard-8", var.MachineType)) || can(regex("c2-standard-4", var.MachineType))
-		error_message = "MachineType must be one of (c2-standard-16 | c2-standard-8 | c2-standard-4) types."
+		condition = contains([ "c2-standard-4", "c2-standard-8", "c2-standard-16" ], var.MachineType)
+		error_message = <<EOF
+MachineType must be one of the following types:
+	c2-standard-4, c2-standard-8, c2-standard-16
+		EOF
 	}
 }
 
@@ -108,7 +111,7 @@ variable "UserProjectTag" {
 }
 
 variable "Version" {
-	default = "11-00"
+	default = "26.0.0"
 	description = "Versioning of the application using the deployment"
 	type = string
 }
