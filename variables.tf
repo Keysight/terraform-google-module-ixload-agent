@@ -78,6 +78,12 @@ variable "RegionName" {
 	type = string
 }
 
+variable "SleepDelay" {
+	default = "1m"
+	description = "Time duration to delay to allow application to perform internal initialization required before use"
+	type = string
+}
+
 variable "Tag" {
 	default = "ixload"
 	description = "App ID tag of application using the deployment"
