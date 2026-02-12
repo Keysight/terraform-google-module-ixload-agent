@@ -16,6 +16,7 @@ locals {
 	Preamble = replace(replace("${local.UserLoginTag}-${local.UserProjectTag}-${local.Tag}-${local.Version}-${local.InstanceId}", "_", "-"), ".", "-")
 	RegionName = var.RegionName
 	SerialPortEnable = true
+	SleepDelay = var.SleepDelay
 	Tag = var.Tag
 	UserEmailTag = var.UserEmailTag
 	UserLoginTag = var.UserLoginTag
